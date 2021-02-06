@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <a href="{{route('listHouse')}}" class="back-to-listings"></a>
+                    <a href="{{route('house.listHouse')}}" class="back-to-listings"></a>
                     <div class="property-title">
                         <h2>{{$house->name}} </span></h2>
                         <span>
@@ -31,7 +31,6 @@
     <div class="container">
         <div class="row margin-bottom-50">
             <div class="col-md-12">
-
                 <!-- Slider -->
                 <div class="property-slider default">
 
@@ -111,22 +110,26 @@
                     <div class="widget">
                         <div id="booking-widget-anchor" class="boxed-widget booking-widget margin-top-35">
                             <h3><i class="fa fa-calendar-check-o"></i> Thuê nhà </h3>
-                            <div class="row with-forms  margin-top-0">
-                                <!-- Panel Dropdown -->
-                                <div class="col-lg-12">
-                                    <div class="panel-dropdown time-slots-dropdown">
-                                        <label for="">Ngày đặt phòng</label>
-                                        <input class="form-control" type="date" name="checkIn">
-                                        <label for="">Ngày trả phòng</label>
-                                        <input class="form-control" type="date" name="checkOut">
+                            <form action="" method="post">
+                                @csrf
+                                <div class="row with-forms  margin-top-0">
+                                    <!-- Panel Dropdown -->
+                                    <input type="hidden" name="houseId" value="{{$house->id}}">
+                                    <div class="col-lg-12">
+                                        <div class="panel-dropdown time-slots-dropdown">
+                                            <label for="">Ngày đặt phòng</label>
+                                            <input class="form-control" type="date" name="checkIn">
+                                            <label for="">Ngày trả phòng</label>
+                                            <input class="form-control" type="date" name="checkOut">
+                                        </div>
                                     </div>
+                                    <!-- Panel Dropdown / End -->
+
                                 </div>
-                                <!-- Panel Dropdown / End -->
-
-                            </div>
-
-                            <!-- Book Now -->
-                            <a href="#" class="button book-now fullwidth margin-top-5">Gửi yêu cầu</a>
+                                <!-- Book Now -->
+                                <button type="submit" class="button book-now fullwidth margin-top-5">Gửi yêu cầu
+                                </button>
+                            </form>
                         </div>
 
                     </div>
@@ -139,7 +142,8 @@
                         <!-- Agent Widget -->
                         <div class="agent-widget">
                             <div class="agent-title">
-                                <div class="agent-photo"><img src="{{asset('storage/' . $user->image)}}" alt=""></div>
+                                <div class="agent-photo"><img src="{{asset('storage/' . $user->image)}}" alt="fail">
+                                </div>
                                 <div class="agent-details">
                                     <h4>{{$user->name}}</h4>
                                 </div>

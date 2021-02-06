@@ -37,6 +37,7 @@ Route::middleware('auth')->group(function () {
             Route::get('/', [UserController::class, 'getListHouseOfUser'])->name('me.getListHouseOfUser');
             Route::get('/add-house', [HouseController::class, 'formAddHouse'])->name('me.showAddHouse');
             Route::post('/add-house', [HouseController::class, 'store'])->name('house.addhouse');
+            Route::get('/checkout', [\App\Http\Controllers\HouseController::class, 'showCheckout'])->name('checkout');
         });
 
     });
@@ -45,6 +46,14 @@ Route::middleware('auth')->group(function () {
 
 // Router  house
 Route::prefix('houses')->group(function (){
-    Route::get('/', [HouseController::class, 'listHouse'])->name('listHouse');
+    Route::get('/', [HouseController::class, 'listHouse'])->name('house.listHouse');
     Route::get('/{id}/detail', [HouseController::class, 'showDetail'])->name('houses.showDetail');
+    Route::post('/{id}/detail', [HouseController::class, 'showCheckout'])->name('houses.checkout');
+    Route::get('/confirm-success',function (){
+        return view('house.confirm-success');
+    })->name('houses.confirm-success');
+    Route::get('/bill', [\App\Http\Controllers\BillController::class, 'confirmPost'])->name('houses.confirmPost');
+    Route::post('/bill', [\App\Http\Controllers\BillController::class, 'confirmIndex'])->name('houses.confirmIndex');
+
+
 });

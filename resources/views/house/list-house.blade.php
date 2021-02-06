@@ -30,11 +30,11 @@
                                     <span class="compare-button with-tip" data-tip-content="So sánh"></span>
                                 </div>
 
-                                <div class="listing-carousel">
+{{--                                <div class="listing-carousel">--}}
+{{--                                    <img src="{{$house->image}}" alt="{{$house->image}}">--}}
+{{--                                </div>--}}
+                                <img src="{{ asset('storage/' . $house->image) }}" alt="">
 
-                                    <img>{{$house->image}}
-
-                                </div>
                             </a>
 
                             <div class="listing-content">
@@ -72,11 +72,7 @@
                 <div class="clearfix"></div>
                 <!-- Pagination -->
                 <div class="pagination-container margin-top-20">
-                    <nav class="pagination">
-                        <ul>
-                            <li><a href="#" class="current-page">1</a></li>
-                        </ul>
-                    </nav>
+
 
                     <nav class="pagination-next-prev">
                         <ul>

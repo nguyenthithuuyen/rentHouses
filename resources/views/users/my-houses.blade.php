@@ -8,7 +8,7 @@
                     <!-- Breadcrumbs -->
                     <nav id="breadcrumbs">
                         <ul>
-                            <li><a href="#">Trang chủ</a></li>
+                            <li><a href="{{route('home')}}">Trang chủ</a></li>
                             <li>Nhà tôi đã đăng</li>
                         </ul>
                     </nav>

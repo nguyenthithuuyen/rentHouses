@@ -19,7 +19,7 @@
                         <a class="current" href="{{route('home')}}">Trang Chủ</a>
                     </li>
                     <li>
-                        <a href="{{route('listHouse')}}">Danh Sách Nhà</a>
+                        <a href="{{route('house.listHouse')}}">Danh Sách Nhà</a>
                     </li>
                     <li>
                         <a href="{{route('house.addhouse')}}">Thêm nhà</a>
@@ -44,6 +44,7 @@
                                 <li><a href="{{ route('me.profile') }}"><i class="sl sl-icon-user"></i> Cập nhật thông tin</a></li>
                                 <li><a href="my-bookmarks.html"><i class="sl sl-icon-star"></i> Đã xem</a></li>
                                 <li><a href="{{ route('me.getListHouseOfUser') }}"><i class="sl sl-icon-docs"></i> Nhà tôi đã đăng</a></li>
+                                <li><a href=""><i class="sl sl-icon-docs"></i> Danh sách nhà đã cho thuê</a></li>
                                 <li><a href="{{ route('logout') }}"><i class="sl sl-icon-power"></i> Đăng xuât</a></li>
                             </ul>
                         </div>

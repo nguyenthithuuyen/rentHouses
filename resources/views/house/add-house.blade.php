@@ -1,14 +1,5 @@
 @extends('master')
 @section('content')
-    <div id="titlebar" class="submit-page">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2><i class="fa fa-plus-circle"></i> Đăng nhà cho thuê</h2>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="container">
         <div class="row">
 
@@ -44,6 +35,9 @@
                                                                 data-tip-content="Tên bài đăng thể hiện khái quát ngôi nhà của bạn"></i>
                                             </h5>
                                             <input class="search-field" name="name" type="text" value=""/>
+                                            @error('name')
+                                            <p class="text-danger">{{ $message }}</p>
+                                            @enderror
                                         </div>
 
                                         <!-- Row -->
@@ -76,6 +70,7 @@
                                             <div class="col-md-4">
                                                 <h5>Diện tích nhà</h5>
                                                 <input type="text" name="area">
+
                                             </div>
                                         </div>
                                         <!-- Row / End -->
@@ -90,6 +85,7 @@
                                                 </h5>
                                                 <div class="select-input disabled-first-option">
                                                     <input name="pricePerDay" type="text" data-unit="VNĐ">
+
                                                 </div>
                                             </div>
 
@@ -130,6 +126,9 @@
                                         <div class="col-md-12">
                                             <h5>Địa chỉ</h5>
                                             <input name="address" type="text">
+                                            @error('address')
+                                            <p class="text-danger">{{ $message }}</p>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -153,6 +152,7 @@
                                         <!-- Address -->
                                         <div class="col-md-12">
                                             <input name="image" type="file" id="image_thumbnail">
+
                                         </div>
                                         <div class="col-md-12">
                                             <a id="new_image" class="button" style="float: right">Thêm ảnh</a>

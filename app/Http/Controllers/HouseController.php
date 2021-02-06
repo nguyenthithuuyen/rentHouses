@@ -22,7 +22,7 @@ class HouseController extends Controller
         return view('house.add-house', compact('categories'));
     }
 
-    public function store(Request $request)
+    public function store(AddHouseRequest $request)
     {
         $house = new House();
         $house->fill($request->all());
@@ -94,14 +94,15 @@ class HouseController extends Controller
 
     }
 
-    public function search(Request $request){
+    public function search(Request $request)
+    {
         $result = House::query();
 
-        if ($request->keyword){
-            $result = $result->where('address', 'like', '%'.$request->keyword.'%');
+        if ($request->keyword) {
+            $result = $result->where('address', 'like', '%' . $request->keyword . '%');
         }
 
-        if ($request->category_id){
+        if ($request->category_id) {
             $result = $result->where('category_id', '=', $request->category_id);
         }
 
@@ -139,7 +140,7 @@ class HouseController extends Controller
 
     public function showCheckout(Request $request)
     {
-        if(!Auth::check()){
+        if (!Auth::check()) {
             return view('login');
         }
         $house = House::find($request->houseId);
@@ -148,10 +149,32 @@ class HouseController extends Controller
         $from = new Carbon($first);
         $to = new Carbon($last);
         $diff = $from->diffInDays($to);
-        $total = $house->pricePerDay*$diff;
+        $total = $house->pricePerDay * $diff;
         $user = User::find(Auth::user()->id);
-        return view('house.checkout',compact('user','house','total','first','last'));
+        return view('house.checkout', compact('user', 'house', 'total', 'first', 'last'));
 
     }
 
+    public function showHouse($id)
+    {
+        $house = House::find($id);
+        $categories = Category::all();
+        return view('house.edit-house', compact('house', 'categories'));
+    }
+
+    public function updateHouse(Request $request)
+    {
+        $id = $request->input('id');
+        $house = House::find($id);
+        $house->fill($request->all());
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $path = $image->store('images', 'public');
+            $house->image = $path;
+        }
+        $house->save();
+        toastr()->success('Cập nhật thành công!!!');
+        return redirect()->route('me.getListHouseOfUser', $id);
+
+    }
 }

@@ -34,8 +34,6 @@
             <div class="col-md-12">
                 <!-- Slider -->
                 <div class="property-slider default">
-
-
                     <a href="{{ asset('storage/' . $house->image) }}"
                        data-background-image="{{ asset('storage/' . $house->image) }}"
                        class="item mfp-gallery"></a>
@@ -73,7 +71,7 @@
                     <ul class="property-main-features">
                         <li>Phòng ngủ <span>{{$house->numberOfBedroom}} </span></li>
                         <li>Phòng tắm <span>{{$house->numberOfBathroom}} </span></li>
-                        <li>Diện tích  <span>{{$house->area}} </span></li>
+                        <li>Diện tích  <span>{{$house->area}} m <sup>2</sup> </span></li>
                     </ul>
 
 

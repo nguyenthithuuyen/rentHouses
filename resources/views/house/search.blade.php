@@ -84,13 +84,13 @@
                     <div class="col-md-6">
                         <!-- Sort by -->
                         <div class="sort-by">
-                            <label>Sort by:</label>
+                            <label>Sắp xếp theo:</label>
 
                             <div class="sort-by-select">
                                 <select data-placeholder="Default order" class="chosen-select-no-single">
-                                    <option>Default Order</option>
-                                    <option>Price Low to High</option>
-                                    <option>Price High to Low</option>
+                                    <option>Đơn hàng mặc định </option>
+                                    <option>Giá từ thấp đến cao </option>
+                                    <option>Giá từ cao đến thấp</option>
                                 </select>
                             </div>
                         </div>
@@ -125,6 +125,11 @@
                                     <span class="like-icon with-tip" data-tip-content="Add to Bookmarks"></span>
                                     <span class="compare-button with-tip" data-tip-content="Add to Compare"></span>
                                 </div>
+                                <div>
+                                    <img
+                                        src=" {{ ($house->image) ? asset('storage/' . $house->image) : asset('images/blog-post-01.jpg')}}"
+                                        alt="">
+                                </div>
 
                             </a>
 
@@ -142,6 +147,7 @@
                                 </div>
 
                                 <ul class="listing-details">
+                                    <li>{{$house->area}} m<sup>2</sup></li>
                                     <li>{{$house->numberOfBedroom}} Phòng ngủ</li>
                                     <li>{{$house->numberOfBathroom}} Phòng tắm</li>
                                 </ul>

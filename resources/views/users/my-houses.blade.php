@@ -73,14 +73,14 @@
                             <div class="title">
                                 <h4><a href="#">{{ $house->name }}</a></h4>
                                 <span>{{ $house->address }}</span>
-                                <span>{{ $house->area }}</span>
+                                <span>Diện tích:{{$house->area}} m<sup>2</sup></span>
                                 <span class="table-property-price">{{ $house->pricePerDay }} /ngày</span>
                             </div>
                         </td>
                         <td class="expire-date">{{ $house->created_at }}</td>
                         <td class="action">
-                            <a href="{{route('house.delete',$house->id )}}" class="delete"><i class="fa fa-remove"></i> Xóa</a>
-                            <a href=""><i class="fa fa-pencil"></i> Sửa</a>
+                            <a href="{{route('house.delete',$house->id )}}"  onclick="return confirm('Bạn muốn xóa ngôi nhà bạn đã đăng')" class="delete"><i class="fa fa-remove"></i> Xóa</a>
+                            <a href="{{route('me.properties',$house->id)}}"><i class="fa fa-pencil"></i> Sửa</a>
                             <a href="#"><i class="fa  fa-eye-slash"></i> Ẩn </a>
                         </td>
                     </tr>

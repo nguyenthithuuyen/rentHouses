@@ -38,6 +38,8 @@ Route::middleware('auth')->group(function () {
             Route::get('/add-house', [HouseController::class, 'formAddHouse'])->name('me.showAddHouse');
             Route::post('/add-house', [HouseController::class, 'store'])->name('house.addhouse');
             Route::get('/checkout', [\App\Http\Controllers\HouseController::class, 'showCheckout'])->name('checkout');
+            Route::get('{id}/edit-house', [HouseController::class, 'showHouse'])->name('me.properties');
+            Route::post('/edit-house', [HouseController::class, 'updateHouse'])->name('properties.update');
             Route::get('/{id}/delete',[HouseController::class,'destroy'])->name('house.delete');
         });
 

@@ -16,7 +16,7 @@
 
                                 <div class="listing-badges">
 
-                                    <span> @if($house->category_id ==2) Nhà ở </span>
+                                    <span> @if($house->category_id ==1) Nhà  Đất  </span>
 
                                     <span>@else Chung cư </span>
                                     @endif
@@ -69,22 +69,7 @@
 
                         </div>
                 @endforeach
-                <!-- Listing Item / End -->
                 </div>
-                <!-- Listings Container / End -->
-
-{{--                <div class="clearfix"></div>--}}
-{{--                <!-- Pagination -->--}}
-{{--                <div class="pagination-container margin-top-20">--}}
-
-{{--                    <nav class="pagination-next-prev">--}}
-{{--                        <ul>--}}
-{{--                            <li><a href="#" class="prev">Trang trước</a></li>--}}
-{{--                            <li><a href="#" class="next">Trang tiếp theo</a></li>--}}
-{{--                        </ul>--}}
-{{--                    </nav>--}}
-{{--                </div>--}}
-{{--                <!-- Pagination / End -->--}}
             </div>
         </div>
     </div>

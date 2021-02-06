@@ -14,5 +14,9 @@ class Bill extends Model
     {
         return $this->belongsTo('\App\Models\User', 'user_id', 'id');
     }
+    public function house()
+    {
+        return $this->belongsTo('\App\Models\House', 'house_id', 'id');
+    }
 
 }

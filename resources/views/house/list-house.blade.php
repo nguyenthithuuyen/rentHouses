@@ -22,18 +22,19 @@
                                     @endif
 
                                 </div>
-
                                 <div class="listing-img-content">
                                     <span
                                         class="listing-price">{{number_format($house->pricePerDay,0,",",".")}}<i> VNĐ </i></span>
-                                    <span class="like-icon with-tip" data-tip-content="Đánh dấu"></span>
-                                    <span class="compare-button with-tip" data-tip-content="So sánh"></span>
+                                    <span class="like-icon with-tip" data-tip-content="Add to Bookmarks"></span>
+                                    <span class="compare-button with-tip" data-tip-content="Add to Compare"></span>
                                 </div>
 
-{{--                                <div class="listing-carousel">--}}
-{{--                                    <img src="{{$house->image}}" alt="{{$house->image}}">--}}
-{{--                                </div>--}}
-                                <img src="{{ asset('storage/' . $house->image) }}" alt="">
+
+                                <div>
+                                    <img
+                                        src=" {{ ($house->image) ? asset('storage/' . $house->image) : asset('images/blog-post-01.jpg')}}"
+                                        alt="">
+                                </div>
 
                             </a>
 
@@ -47,41 +48,43 @@
                                         <i class="fa fa-map-marker"></i>
                                         {{$house->address}}
                                     </a>
+
                                     <a href="{{route('houses.showDetail', $house->id)}}" class="details button border">Xem
                                         chi tiết</a>
                                 </div>
 
                                 <ul class="listing-details">
-                                    <li> {{ $house->numberOfBedroom }} Phòng ngủ</li>
-                                    <li> {{ $house->numberOfBathroom }} Phòng tắm</li>
+                                    <li>{{$house->area}} m<sup>2</sup></li>
+                                    <li>{{$house->numberOfBedroom}} Phòng ngủ</li>
+                                    <li>{{$house->numberOfBathroom}} Phòng tắm</li>
                                 </ul>
-
                                 <div class="listing-footer">
                                     @if (!! $user = \App\Models\User::find($house->user_id))
                                         <a href="#"><i class="fa fa-user"></i> {{ $user->name}}</a>
                                     @endif
                                     <span><i class="fa fa-calendar-o"></i> {{ $house->create_at }}</span>
                                 </div>
+
                             </div>
+
                         </div>
                 @endforeach
                 <!-- Listing Item / End -->
                 </div>
                 <!-- Listings Container / End -->
 
-                <div class="clearfix"></div>
-                <!-- Pagination -->
-                <div class="pagination-container margin-top-20">
+{{--                <div class="clearfix"></div>--}}
+{{--                <!-- Pagination -->--}}
+{{--                <div class="pagination-container margin-top-20">--}}
 
-
-                    <nav class="pagination-next-prev">
-                        <ul>
-                            <li><a href="#" class="prev">Trang trước</a></li>
-                            <li><a href="#" class="next">Trang tiếp theo</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <!-- Pagination / End -->
+{{--                    <nav class="pagination-next-prev">--}}
+{{--                        <ul>--}}
+{{--                            <li><a href="#" class="prev">Trang trước</a></li>--}}
+{{--                            <li><a href="#" class="next">Trang tiếp theo</a></li>--}}
+{{--                        </ul>--}}
+{{--                    </nav>--}}
+{{--                </div>--}}
+{{--                <!-- Pagination / End -->--}}
             </div>
         </div>
     </div>

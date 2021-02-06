@@ -22,6 +22,7 @@ class CreateHousesTable extends Migration
             $table->integer('numberOfBathroom')->nullable();
             $table->longText('desc')->nullable();
             $table->longText('image')->nullable();
+            $table->integer('area')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

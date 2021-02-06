@@ -1,3 +1,4 @@
+
 @extends('master')
 @section('content')
     <div id="titlebar" class="property-titlebar margin-bottom-0">
@@ -72,6 +73,7 @@
                     <ul class="property-main-features">
                         <li>Phòng ngủ <span>{{$house->numberOfBedroom}} </span></li>
                         <li>Phòng tắm <span>{{$house->numberOfBathroom}} </span></li>
+                        <li>Diện tích  <span>{{$house->area}} </span></li>
                     </ul>
 
 

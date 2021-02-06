@@ -28,10 +28,14 @@
                         <div class="col">
                             <span class="font-weight-bold">Email: </span>{{$user->email}}
                         </div>
+                        <input type="hidden" name="total" value="{{$total}}">
+                        <input type="hidden" name="house_id" value="{{$house->id}}">
+                        <input type="hidden" name="user_id" value="{{$house->user_id}}">
                     </div>
                 </div>
 
-                <a class="btn btn-primary" href="{{route('houses.confirm-success')}}"> Confirm </a>
+
+                <button class="btn btn-primary" type="submit" > Submit </button>
             </form>
         </div>
     </div>

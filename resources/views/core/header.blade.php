@@ -2,7 +2,7 @@
     <div class="container">
         <div class="left-side">
             <div id="logo">
-                <a href="">
+                <a href="{{route('home')}}">
                     <img src="{{asset('images/logo.png')}}" alt="">
                 </a>
             </div>
@@ -21,8 +21,9 @@
                     <li>
                         <a href="{{route('house.listHouse')}}">Danh Sách Nhà</a>
                     </li>
+
                     <li>
-                        <a href="{{route('house.addhouse')}}">Thêm nhà</a>
+                        <a href="{{route('houses.search')}}">Tìm Kiếm Nhà</a>
                     </li>
                 </ul>
             </nav>

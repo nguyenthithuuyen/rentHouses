@@ -21,7 +21,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/login', [AuthController::class, 'showFormLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
-Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/register', [AuthController::class, 'showFormRes'])->name('showFormRes');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::get('redirect', [\App\Http\Controllers\SocialController::class, 'redirect'])->name('redirect');
@@ -38,6 +37,10 @@ Route::middleware('auth')->group(function () {
             Route::get('/', [UserController::class, 'getListHouseOfUser'])->name('me.getListHouseOfUser');
             Route::get('/add-house', [HouseController::class, 'formAddHouse'])->name('me.showAddHouse');
             Route::post('/add-house', [HouseController::class, 'store'])->name('house.addhouse');
+            Route::get('/checkout', [\App\Http\Controllers\HouseController::class, 'showCheckout'])->name('checkout');
+            Route::get('{id}/edit-house', [HouseController::class, 'showHouse'])->name('me.properties');
+            Route::post('/edit-house', [HouseController::class, 'updateHouse'])->name('properties.update');
+            Route::get('/{id}/delete',[HouseController::class,'destroy'])->name('house.delete');
         });
 
     });
@@ -46,6 +49,12 @@ Route::middleware('auth')->group(function () {
 
 // Router  house
 Route::prefix('houses')->group(function (){
-    Route::get('/', [HouseController::class, 'listHouse'])->name('listHouse');
-    Route::get('/{id}/detail', [HouseController::class, 'showDetail'])->name('houses.showDetail');
+    Route::get('/', [HouseController::class, 'listHouse'])->name('house.listHouse');
+    Route::get('{id}/detail', [HouseController::class, 'showDetail'])->name('houses.showDetail');
+    Route::get('/search',[HouseController::class,'search'])->name('houses.search');
+    Route::post('/{id}/detail', [HouseController::class, 'showCheckout'])->name('houses.checkout');
+    Route::post('/confirm-success',[\App\Http\Controllers\BillController::class,'confirmPost'])->name('houses.confirmPost');
+    Route::post('/bill', [\App\Http\Controllers\BillController::class, 'confirmIndex'])->name('houses.confirmIndex');
+
+
 });

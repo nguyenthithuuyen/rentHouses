@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class House extends Model
 {
@@ -19,22 +20,38 @@ class House extends Model
         "desc",
         "image",
         "user_id",
-        "category_id"
+        "category_id",
+        "status",
+        "area"
     ];
 
+    public function getCategory(){
+        return ($this->category_id == "1") ? 'Chung cư' : 'Nhà Đất';
+    }
+
+    public function getStatus()
+    {
+        return ($this->status == "1") ? 'Cho thuê' : 'Không cho thuê';
+    }
 
     public function user()
     {
         return $this->belongsTo('\App\Models\User', 'user_id', 'id');
     }
 
-    public function image()
+    public function images()
     {
-        return $this->hasMany('\App\Models\HouseImage', 'house_id', 'id');
+        return $this->hasMany(Image::class, 'house_id', 'id');
     }
 
     public function bills()
     {
         return $this->hasMany('\App\Models\Bill', 'house_id', 'id');
     }
+
+    public function categories(): BelongsTo
+    {
+        return $this->belongsTo(Category::class);
+    }
+
 }

@@ -27,4 +27,10 @@ class UpdateProfileRequest extends FormRequest
             'name' => 'required',
         ];
     }
+    public function messages()
+    {
+        return [
+            'name.required' => 'Tên không được để trống',
+        ];
+    }
 }

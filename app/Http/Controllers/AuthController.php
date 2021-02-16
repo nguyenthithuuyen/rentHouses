@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
-    function showFormLogin()
+    function FormLogin()
     {
         return view('login');
     }
@@ -26,10 +26,15 @@ class AuthController extends Controller
             'password' => $password
         ];
         if (!Auth::attempt($data)) {
-            Session::flash('login_error', 'Tài khoản khôg chính xác!');
+            Session::flash('login_error', 'Tài khoản không chính xác!');
             return redirect()->route('login');
         }
         return redirect()->route('home');
+    }
+
+    function FormRegister()
+    {
+        return view('register');
     }
 
     function register(RegisterRequest $request): \Illuminate\Http\RedirectResponse
@@ -42,11 +47,6 @@ class AuthController extends Controller
         $user->save();
         return redirect()->route('login');
 
-    }
-
-    function showFormRes()
-    {
-        return view('register');
     }
 
     public function logout(): \Illuminate\Http\RedirectResponse

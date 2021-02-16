@@ -6,11 +6,13 @@
     <title>Rent House Unlimited </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <!-- CSS
     ================================================== -->
     <link rel="stylesheet" href="{{asset('css/icons.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/color.css')}}">
+    <link rel="stylesheet" href="{{asset('css/search.css')}}">
     @toastr_css
 
 </head>
@@ -80,13 +82,13 @@
     <header id="header-container">
 
         <!-- Topbar -->
-        @include('core.topbar')
+        @include('partial.topbar')
         <div class="clearfix"></div>
         <!-- Topbar / End -->
 
 
         <!-- Header -->
-    @include('core.header')
+    @include('partial.header')
     <!-- Header / End -->
 
     </header>
@@ -97,7 +99,7 @@
 
 <!-- Footer
     ================================================== -->
-@include('core.footer')
+@include('partial.footer')
 <!-- Footer / End -->
 
 

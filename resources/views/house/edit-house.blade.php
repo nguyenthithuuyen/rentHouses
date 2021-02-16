@@ -1,9 +1,6 @@
 @extends('master')
 @section('content')
     <div id="titlebar" class="submit-page">
-        <div class="container">
-            <!-- Content
-            ================================================== -->
             <div class="container">
                 <div class="row">
                     <!-- Submit Page -->
@@ -141,6 +138,5 @@
                     </div>
                 </div>
             </div>
-        </div>
     </div>
 @endsection

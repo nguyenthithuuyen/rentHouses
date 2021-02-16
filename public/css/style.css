@@ -2518,23 +2518,23 @@ input.second-slider-value {
 .compare-slide-menu.active { right: 0; }
 
 /* Compare Icon */
-.compare-button {
-	color: #fff;
-	font-size: 20px;
-	position: absolute;
-	z-index: 101;
-	outline: none;
-	border: none;
-	right: 64px;
-	bottom: 27px;
-	background-color: transparent;
-	width: 28px;
-	height: 28px;
-	display: block;
-	background-image: url(../images/compare-icon.svg);
-	background-repeat: no-repeat;
-	background-size: 28px;
-}
+/*.compare-button {*/
+/*	color: #fff;*/
+/*	font-size: 20px;*/
+/*	position: absolute;*/
+/*	z-index: 101;*/
+/*	outline: none;*/
+/*	border: none;*/
+/*	right: 64px;*/
+/*	bottom: 27px;*/
+/*	background-color: transparent;*/
+/*	width: 28px;*/
+/*	height: 28px;*/
+/*	display: block;*/
+/*	background-image: url(../images/compare-icon.svg);*/
+/*	background-repeat: no-repeat;*/
+/*	background-size: 28px;*/
+/*}*/
 
 span.like-icon {
 	width: 23px;

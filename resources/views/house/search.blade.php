@@ -6,7 +6,7 @@
                 <div class="col-md-12">
 
                     <!-- Title -->
-                    <h3 class="search-title">Search</h3>
+                    <h3 class="search-title">Tìm kiếm</h3>
 
                     <!-- Form -->
                     <div class="main-search-box no-shadow">
@@ -17,7 +17,8 @@
 
                                 <!-- Status -->
                                 <div class="col-md-3">
-                                    <select name="tab"  class="chosen-select-no-single">
+                                    <label>Trạng thái</label>
+                                    <select name="tab" class="chosen-select-no-single">
                                         <option value="1" {{ (request()->tab == 1) ? 'selected' : '' }}>Cho thuê
                                         </option>
                                         <option value="2" {{ (request()->tab == 2) ? 'selected' : '' }}>Không cho thuê
@@ -27,44 +28,32 @@
 
                                 <!-- Property Type -->
                                 <div class="col-md-3">
-                                    <select  name="type" class="chosen-select-no-single">
+                                    <label>Loại nhà</label>
+                                    <select name="tab" class="chosen-select-no-single">
 
-                                        <option value="1" {{ (request()->category_id == 1) ? 'selected' : '' }}>Chung cư</option>
+                                        <option value="1" {{ (request()->category_id == 1) ? 'selected' : '' }}>Chung
+                                            cư
+                                        </option>
                                         <option value="2" {{ (request()->category_id == 2) ? 'selected' : '' }}>Nhà đất
                                         </option>
                                     </select>
                                 </div>
 
-{{--                                <!-- Min Price -->--}}
-{{--                                <div class="col-md-4">--}}
-{{--                                    <!-- Select Input -->--}}
-{{--                                    <div class="select-input">--}}
-{{--                                        <input type="text" name="min_price" placeholder="Giá Thấp Nhất"--}}
-{{--                                               data-unit="VND" {{(request()->get('min_prince'))}}>--}}
-{{--                                    </div>--}}
-{{--                                    <!-- Select Input / End -->--}}
-{{--                                </div>--}}
-
-{{--                                <!-- Max Price -->--}}
-{{--                                <div class="col-md-4">--}}
-
-{{--                                    <!-- Select Input -->--}}
-{{--                                    <div class="select-input">--}}
-{{--                                        <input type="text" name="max_prince" placeholder="Giá Cao Nhất" data-unit="VND" {{(request()->get('max_prince'))}}>--}}
-{{--                                    </div>--}}
-{{--                                    <!-- Select Input / End -->--}}
-
-{{--                                </div>--}}
-
-                                <!-- Main Search Input -->
-                                <div class="col-md-6">
-                                    <div class="main-search-input">
+                                <!-- Property Type -->
+                                <div class="col-md-4">
+                                    <label>Thành phố </label>
+                                    <div class="input-address">
                                         <input type="text" name="keyword" placeholder="Thành Phố"
                                                value="{{ request()->get('keyword') }}"/>
-                                        <button type="submit" class="button">Tìm Kiếm</button>
                                     </div>
                                 </div>
 
+                                <div class="col-md-2">
+                                    <label>Từ khóa</label>
+                                    <div class="input-address">
+                                        <button type="submit" class="button">Tìm Kiếm</button>
+                                    </div>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -88,8 +77,8 @@
 
                             <div class="sort-by-select">
                                 <select data-placeholder="Default order" class="chosen-select-no-single">
-                                    <option>Đơn hàng mặc định </option>
-                                    <option>Giá từ thấp đến cao </option>
+                                    <option>Đơn hàng mặc định</option>
+                                    <option>Giá từ thấp đến cao</option>
                                     <option>Giá từ cao đến thấp</option>
                                 </select>
                             </div>
@@ -154,7 +143,7 @@
 
                                 <div class="listing-footer">
                                     <a href="#"><i class="fa fa-user"></i> {{ $house->user->name }}</a>
-{{--                                    <span><i class="fa fa-calendar-o"></i> {{ $house->diffForHumans() }}</span>--}}
+                                    {{--                                    <span><i class="fa fa-calendar-o"></i> {{ $house->diffForHumans() }}</span>--}}
                                 </div>
 
                             </div>

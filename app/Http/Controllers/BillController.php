@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Bill;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
 
 class BillController extends Controller
 {
@@ -23,9 +22,8 @@ class BillController extends Controller
         $bill->checkOut = $request->checkOut;
         $bill->house_id = $request->house_id;
         $bill->user_id = $request->user_id;
-        // dd($request->all());
         $bill->save();
-        // $request->session()->forget('userRent');
+
         return view('house.confirm-success');
     }
 

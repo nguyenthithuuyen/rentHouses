@@ -29,7 +29,6 @@ class HouseController extends Controller
         $house->status = StatusConst::LEASE;
         $house->user_id = Auth::id();
 
-        //upload file
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $path = $image->store('houses', 'public');
@@ -51,40 +50,6 @@ class HouseController extends Controller
         return redirect()->route('home');
     }
 
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param int $id
-     * @return RedirectResponse
-     */
     public function destroy($id): RedirectResponse
     {
         $house = House::find($id);

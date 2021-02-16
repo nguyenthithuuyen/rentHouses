@@ -4,8 +4,7 @@
             <div class="col-md-5 col-sm-6">
                 <img class="footer-logo" src="public/images/logo.png" alt="">
                 <br><br>
-                <p>Website chúng tôi cung cấp cho bạn dịch vụ cho thuê nhà tiện lợi, nhanh chóng và bảo mật thông tin
-                    người dùng </p>
+                <p>Website chúng tôi cung cấp cho bạn dịch vụ cho thuê nhà tiện lợi, nhanh chóng và bảo mật thông tin người dùng </p>
             </div>
             <div class="col-md-4 col-sm-6 ">
                 <h4>Chuyển hướng nhanh</h4>

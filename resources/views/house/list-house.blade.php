@@ -2,23 +2,15 @@
 @section('content')
     <div class="container">
         <div class="row fullwidth-layout">
-
             <div class="col-md-12">
-                <!-- Listings -->
                 <div class="listings-container list-layout">
                 @foreach($houses as $house)
-                    <!-- Listing Item -->
                         <div class="listing-item">
-
                             <a href="" class="listing-img-container">
-
                                 <div class="listing-badges">
-
                                     <span> @if($house->category_id == 1) Nhà  Đất  </span>
-
                                     <span>@else Chung cư </span>
                                     @endif
-
                                 </div>
                                 <div class="listing-img-content">
                                     <span
@@ -26,18 +18,13 @@
                                     <span class="like-icon with-tip" data-tip-content="Add to Bookmarks"></span>
                                     <span class="compare-button with-tip" data-tip-content="Add to Compare"></span>
                                 </div>
-
-
                                 <div>
                                     <img
                                         src=" {{ ($house->image) ? asset('storage/' . $house->image) : asset('images/blog-post-01.jpg')}}"
                                         alt="">
                                 </div>
-
                             </a>
-
                             <div class="listing-content">
-
                                 <div class="listing-title">
                                     <h4><a href="{{route('houses.showDetail', $house->id)}}">{{$house->name   }}</a>
                                     </h4>
@@ -46,11 +33,9 @@
                                         <i class="fa fa-map-marker"></i>
                                         {{$house->address}}
                                     </a>
-
                                     <a href="{{route('houses.showDetail', $house->id)}}" class="details button border">Xem
                                         chi tiết</a>
                                 </div>
-
                                 <ul class="listing-details">
                                     <li>{{$house->area}} m<sup>2</sup></li>
                                     <li>{{$house->numberOfBedroom}} Phòng ngủ</li>
@@ -62,9 +47,7 @@
                                     @endif
                                     <span><i class="fa fa-calendar-o"></i> {{ $house->create_at }}</span>
                                 </div>
-
                             </div>
-
                         </div>
                 @endforeach
                 </div>

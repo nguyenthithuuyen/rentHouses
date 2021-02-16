@@ -16,9 +16,7 @@
                                     <th scope="col">Tổng giá tiền</th>
                                 </tr>
                                 </thead>
-
                                 <tbody>
-
                                 @foreach ($results as $result)
                                     <tr>
                                         <td scope="col">{{ $result->name }}</td>
@@ -33,12 +31,9 @@
                                 </tbody>
                             </table>
                         </div>
-
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-
 @endsection

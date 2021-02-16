@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UpdateProfileRequest;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use PhpParser\Node\Stmt\DeclareDeclare;
 
 class UserController extends Controller
 {
@@ -21,7 +19,6 @@ class UserController extends Controller
         $id = Auth::id();
         $user = User::findOrFail($id);
         $user->fill($request->all());
-        //upload file
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $path = $image->store('images', 'public');

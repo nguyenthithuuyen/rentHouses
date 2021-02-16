@@ -6,9 +6,7 @@
                     <div class="top-bar-dropdown">
                         <span>Tùy chọn</span>
                         <ul class="options">
-                            <li>
-                                <div class="arrow"></div>
-                            </li>
+                            <li><div class="arrow"></div></li>
                             <li><a href="#">Đăng nhập</a></li>
                             <li><a href="#">Đăng ký</a></li>
                             <li><a href="#">Đổi mật khẩu</a></li>
@@ -16,20 +14,17 @@
                         </ul>
                     </div>
                 </li>
-
             @if(empty( \Illuminate\Support\Facades\Auth::user()->phone))
                 @else
                     <li>
                         <i class="fa fa-phone"></i>{{ \Illuminate\Support\Facades\Auth::user()->phone }}
                     </li>
                 @endif
-
                 @if(empty( \Illuminate\Support\Facades\Auth::user()->email))
                 @else
                     <li>
                         <i class="im-icon-Voicemail"></i>{{ \Illuminate\Support\Facades\Auth::user()->email }}
                     </li>
-
                 @endif
             </ul>
         </div>

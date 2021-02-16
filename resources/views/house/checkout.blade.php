@@ -33,11 +33,8 @@
                         <input type="hidden" name="user_id" value="{{$house->user_id}}">
                     </div>
                 </div>
-
-
-                <button class="btn btn-primary" type="submit" > Submit </button>
+                <button class="btn btn-primary" type="submit">Submit</button>
             </form>
         </div>
     </div>
-
 @endsection

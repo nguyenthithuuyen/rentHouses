@@ -1,5 +1,4 @@
 @extends('master')
-
 @section('content')
     <div class="box-background-1">
         <div class="container">
@@ -18,7 +17,6 @@
                                     <th scope="col">Tổng giá tiền</th>
                                 </tr>
                                 </thead>
-
                                 <tbody>
                                 @forelse ($houses as $house)
                                     <tr>
@@ -28,29 +26,17 @@
                                         <td scope="col">{{ $house->checkIn }}</td>
                                         <td scope="col">{{ $house->checkOut }}</td>
                                     </tr>
-
                                 @empty
                                     <tr>
                                         <td colspan="6">Bạn chưa thuê nhà nào!</td>
                                     </tr>
                                 @endforelse
-
-
-
                                 </tbody>
                             </table>
                         </div>
-
                     </div>
-
                 </div>
             </div>
-
-
-
-
-
         </div>
     </div>
-
 @endsection

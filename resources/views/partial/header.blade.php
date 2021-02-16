@@ -30,15 +30,12 @@
             <div class="clearfix"></div>
         </div>
         <div class="right-side">
-
             <div class="header-widget">
                 @if(!\Illuminate\Support\Facades\Auth::check())
                     <a href="{{route('FormRegister')}}" class="sign-in"><i class="fa fa-user"></i> Đăng ký</a>
                     <a href="{{route('login')}}" class="sign-in"><i class="fa fa-user"></i> Đăng nhập</a>
                 @else
                     <div class="header-widget">
-
-                        <!-- User Menu -->
                         <div class="user-menu">
                             <div class="user-name"><span><img src="" alt=""></span>Xin chào, {{ \Illuminate\Support\Facades\Auth::user()->name }}!</div>
                             <ul>

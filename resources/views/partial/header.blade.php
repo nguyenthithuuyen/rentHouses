@@ -33,7 +33,7 @@
 
             <div class="header-widget">
                 @if(!\Illuminate\Support\Facades\Auth::check())
-                    <a href="{{route('showFormRes')}}" class="sign-in"><i class="fa fa-user"></i> Đăng ký</a>
+                    <a href="{{route('FormRegister')}}" class="sign-in"><i class="fa fa-user"></i> Đăng ký</a>
                     <a href="{{route('login')}}" class="sign-in"><i class="fa fa-user"></i> Đăng nhập</a>
                 @else
                     <div class="header-widget">

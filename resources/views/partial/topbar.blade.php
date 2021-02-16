@@ -2,8 +2,6 @@
     <div class="container">
         <div class="left-side">
             <ul class="top-bar-menu">
-                <li><i class="fa fa-phone"></i> +84 326 279 089</li>
-                <li><i class="fa fa-envelope"></i> <a href="#">2021NoLimit@gmail.com</a></li>
                 <li>
                     <div class="top-bar-dropdown">
                         <span>Tùy chọn</span>
@@ -18,6 +16,21 @@
                         </ul>
                     </div>
                 </li>
+
+            @if(empty( \Illuminate\Support\Facades\Auth::user()->phone))
+                @else
+                    <li>
+                        <i class="fa fa-phone"></i>{{ \Illuminate\Support\Facades\Auth::user()->phone }}
+                    </li>
+                @endif
+
+                @if(empty( \Illuminate\Support\Facades\Auth::user()->email))
+                @else
+                    <li>
+                        <i class="im-icon-Voicemail"></i>{{ \Illuminate\Support\Facades\Auth::user()->email }}
+                    </li>
+
+                @endif
             </ul>
         </div>
         <div class="right-side">

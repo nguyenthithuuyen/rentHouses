@@ -1,7 +1,5 @@
 @extends('master')
 @section('content')
-    <!-- Content
-    ================================================== -->
     <div class="container">
         <div class="row fullwidth-layout">
 
@@ -16,7 +14,7 @@
 
                                 <div class="listing-badges">
 
-                                    <span> @if($house->category_id ==1) Nhà  Đất  </span>
+                                    <span> @if($house->category_id == 1) Nhà  Đất  </span>
 
                                     <span>@else Chung cư </span>
                                     @endif
